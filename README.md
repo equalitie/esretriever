@@ -388,7 +388,7 @@ To run the `simple_retrieve_cli.py`:
 ```
 command: python simple_retrieve_cli.py ${ELK_HOST} es-index es-index-type "start datetime" "end datetime" -u es_user -p -o /data/nameofthefolder
 # for example:
-command: python simple_retrieve_cli.py ${ELK_HOST} deflect.log deflect_access "2019-09-01 00:00:00" "2019-09-01 01:00:00" -u esuser -p -o /data/testdata
+command: python simple_retrieve_cli.py ${ELK_HOST} test.log web_access "2019-09-01 00:00:00" "2019-09-01 01:00:00" -u esuser -p -o /data/testdata
 ```
 The example above will get all data between "2019-09-01 00:00:00" and "2019-09-01 01:00:00" and it will store them under `/data/testdata_YYYY_MM_dd` folder.
 If the data range spans over more than a single day, then the data will be stored in separate folders `/data/testdata_YYYY_MM_day1`, `/data/testdata_YYYY_MM_day2` etc.
