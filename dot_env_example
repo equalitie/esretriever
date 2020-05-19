@@ -1,0 +1,5 @@
+BRANCH=master
+ELK_USER=elastic search user
+ELK_PASSWORD=elastic search password
+ELK_HOST=elastic search host
+ELK_PORT=9200

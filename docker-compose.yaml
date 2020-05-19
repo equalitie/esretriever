@@ -1,0 +1,35 @@
+version: '3'
+services:
+    es_retriever:
+        build:
+          context: .
+          dockerfile: Dockerfile
+          args:
+<<<<<<< Updated upstream
+#            - GITLAB_USER=${GITLAB_USER}
+#            - GITLAB_KEY=${GITLAB_KEY}
+            - ELK_USER=${ELK_USER}
+            - ELK_PASSWORD=${ELK_PASSWORD}
+            - ELK_HOST=${DOCKER_IP}
+=======
+            - GITLAB_USER=${GITLAB_USER}
+            - GITLAB_KEY=${GITLAB_KEY}
+            - ELK_USER=${ELK_USER}
+            - ELK_PASSWORD=${ELK_PASSWORD}
+            - ELK_HOST=${ELK_HOST}
+>>>>>>> Stashed changes
+            - ELK_PORT=${ELK_PORT}
+            - BRANCH=${BRANCH}
+        env_file:
+          - .env
+        command: python simple_retrieve_cli.py ${ELK_HOST} es-index es-index-type "2019-09-01 00:00:00" "2019-09-01 00:03:00" -u esuser -p -o /data/testdata
+        stdin_open: true
+        tty: true
+        volumes:
+          - ./data:/data
+        ports:  # for spark UI
+          - "4040:4040"
+          - "4041:4041"
+
+volumes:
+  data-volume:
