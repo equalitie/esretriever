@@ -19,7 +19,7 @@ tests_require = [
       ]
 
 setup(name='es_retriever',
-      version='0.1.3',
+      version='1.0.0',
       description='Retrieve Logs from ES with Spark',
       long_description=long_description,
       tests_require=tests_require,
