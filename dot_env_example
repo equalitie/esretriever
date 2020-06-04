@@ -1,0 +1,3 @@
+BRANCH=master
+ELK_USER=elastic search user
+ELK_HOST=elastic search host
